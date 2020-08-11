@@ -4,4 +4,4 @@
   tasks:
     - name: get
       uri:
-        url: https://api.telegram.org/bot900728006:AAHSUTyc9PIuIWLBF3hrwyCrbdu_cRcLPRI/sendMessage?chat_id=-1001193124708&text={{mail}}
+        url: https://api.telegram.org/bot900728006:AAHSUTyc9PIuIWLBF3hrwyCrbdu_cRcLPRI/sendMessage?chat_id=-1001193124708&text={{item.mail}}
