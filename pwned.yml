@@ -1,0 +1,15 @@
+---
+- name: check_email
+  hosts: 127.0.0.1
+  tasks:
+    - name: login
+      uri:
+        url: "https://haveibeenpwned.com/api/v3/breachedaccount/imalkin%40mont.com"
+        validate_certs: false
+        method: GET
+        headers:
+          hibp-api-key: "5fde572673d54e6a83b7f8445d486a91"
+      register: loginoutput
+
+    - set_fact:
+        results: "{{ loginoutput.json }}"
