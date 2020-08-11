@@ -4,11 +4,11 @@
   tasks:
     - name: login
       uri:
-        url: "https://haveibeenpwned.com/api/v3/breachedaccount/imalkin%40mont.com"
+        url: "https://haveibeenpwned.com/api/v3/breachedaccount/{{mail}}"
         validate_certs: false
         method: GET
         headers:
-          hibp-api-key: "5fde572673d54e6a83b7f8445d486a91"
+          hibp-api-key: "{{api_key}}"
       register: loginoutput
 
     - set_fact:
