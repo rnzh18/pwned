@@ -1,5 +1,5 @@
 ---
-- name: check_email
+- name: check_mail
   hosts: 127.0.0.1
   tasks:
     - name: login
