@@ -1,12 +1,13 @@
 ---
-- name: login
+- name: check
   uri:
-    url: "https://haveibeenpwned.com/api/v3/breachedaccount/{{mail}}"
+    url: "https://haveibeenpwned.com/api/v3/breachedaccount/{{ item.mail }}"
     validate_certs: false
     method: GET
     headers:
-      hibp-api-key: "{{api_key}}"
+      hibp-api-key: "{{ apikey }}"
+  ignore_errors: yes
   register: loginoutput
 
-- set_fact:
-    results: "{{ loginoutput.json }}"
+#- set_fact:
+#    results: "{{ loginoutput.json }}"

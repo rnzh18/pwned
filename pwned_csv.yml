@@ -8,10 +8,14 @@
         delimiter: ';'
       register: new_mails
 
-    - set_fact:
-        mails: "{{ cve_var | default([]) + [item.mail] }}"
-      loop: "{{ new_mails.list }}"
+#    - debug:
+#        msg: "{{ item.key }}"
+#      with_dict: "{{ new_mails.dict }}"
+#      register: new_mail_for_test
 
-    - name: check mails
+#    - set_fact:
+#        mail_to_check: "{{ mail_to_check | default([]) + [item.mail] }}"
+#      loop: "{{ new_mails.list }}"
+    - name: check
       include_tasks: pwned.yml
-      loop: "{{ mails }}"
+      loop: "{{ new_mails.list }}"
