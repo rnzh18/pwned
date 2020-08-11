@@ -1,0 +1,17 @@
+---
+- name: load_csv
+  hosts: 127.0.0.1
+  tasks:
+    - name: load
+      read_csv:
+        path: mails.csv
+        delimiter: ';'
+      register: new_mails
+
+    - set_fact:
+        mails: "{{ cve_var | default([]) + [item.mail] }}"
+      loop: "{{ new_mails.list }}"
+
+    - name: check mails
+      include_tasks: pwned.yml
+      loop: "{{ mails }}"

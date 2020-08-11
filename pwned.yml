@@ -1,15 +1,12 @@
 ---
-- name: check_mail
-  hosts: 127.0.0.1
-  tasks:
-    - name: login
-      uri:
-        url: "https://haveibeenpwned.com/api/v3/breachedaccount/{{mail}}"
-        validate_certs: false
-        method: GET
-        headers:
-          hibp-api-key: "{{api_key}}"
-      register: loginoutput
+- name: login
+  uri:
+    url: "https://haveibeenpwned.com/api/v3/breachedaccount/{{mail}}"
+    validate_certs: false
+    method: GET
+    headers:
+      hibp-api-key: "{{api_key}}"
+  register: loginoutput
 
-    - set_fact:
-        results: "{{ loginoutput.json }}"
+- set_fact:
+    results: "{{ loginoutput.json }}"
