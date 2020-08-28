@@ -24,7 +24,7 @@
   when: result is succeeded
 
 - set_fact:
-    info: 
+    info: ""
   when: result is succeeded
 
 #- set_fact:
