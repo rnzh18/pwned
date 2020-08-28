@@ -10,7 +10,7 @@
   register: result
 
 - set_fact:
-    info: "{{ info + [item.Name] }}"
+    info: "{{ info | default([]) + [item.Name] }}"
   loop: "{{ result.json }}"
   when: result is succeeded
 
