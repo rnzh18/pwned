@@ -28,7 +28,7 @@
   when: result is succeeded
 
 - set_fact:
-    info: "{{info | join()}}"
+    info: "{{info | join(,)}}"
   when: result is succeeded
 
 
