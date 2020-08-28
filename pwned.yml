@@ -10,17 +10,17 @@
   register: result
 
 - set_fact:
-    info_{{item.Name}}: "{{ info_{{item.Name}} | default([]) + [item.Name] }}"
+    info: "{{ info | default([]) + [item.Name] }}"
   loop: "{{ result.json }}"
   when: result is succeeded
 
 - set_fact:
-    info2__{{item.Name}}: "{{info_{{item.Name}} | join(',') }}"
+    info2: "{{info | join(',') }}"
   when: result is succeeded
 
 - name: telegram
   uri:
-    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info2_{{item.Name}}}}
+    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info2}}
   when: result is succeeded
 
 - set_fact:
