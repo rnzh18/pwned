@@ -18,7 +18,7 @@
   when: result is succeeded
 
 - set_fact:
-    info: "{{ info + [item.Name] }}"
+    info: "{{ info | string + [item.Name] }}"
   loop: "{{ result.json }}"
   when: result is succeeded
 
