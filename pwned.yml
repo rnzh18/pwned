@@ -24,7 +24,7 @@
   when: result is succeeded
 
 - set_fact:
-    info: ""
+    info: "{{ '' | default([] }}"
   when: result is succeeded
 
 - set_fact:
