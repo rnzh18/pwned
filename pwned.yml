@@ -30,6 +30,3 @@
 - set_fact:
     info: "{{info | string}}"
   when: result is succeeded
-
-- debug:
-    msg: "{{info}}
