@@ -10,15 +10,7 @@
   register: result
 
 - set_fact:
-    info: ""
-  when: result is succeeded
-
-- set_fact:
-    info: "{{info | string}}"
-  when: result is succeeded
-
-- set_fact:
-    info: "{{ info | string + [item.Name] }}"
+    info: "{{ info | default([]) + [item.Name] }}"
   loop: "{{ result.json }}"
   when: result is succeeded
 
@@ -31,15 +23,10 @@
     url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info2}}
   when: result is succeeded
 
-#- set_fact:
-#    info: ""
-#  when: result is succeeded
+- set_fact:
+    info: ""
+  when: result is succeeded
 
-#- set_fact:
-#    info: "{{info | string}}"
-#  when: result is succeeded
-
-
-
-#- set_fact:
-#    results: "{{ loginoutput.json }}"
+- set_fact:
+    info: "{{info | string}}"
+  when: result is succeeded
