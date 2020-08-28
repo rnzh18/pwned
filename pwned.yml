@@ -18,7 +18,7 @@
 
 - name: telegram
   uri:
-    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}}{{info2}}
+    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}}_{{info2}}
   when: result is succeeded
 #- set_fact:
 #    results: "{{ loginoutput.json }}"
