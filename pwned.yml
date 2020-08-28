@@ -15,12 +15,12 @@
   when: result is succeeded
 
 - set_fact:
-    info2: "{{info_{{item.Name}} | join(',') }}"
+    info2__{{item.Name}}: "{{info_{{item.Name}} | join(',') }}"
   when: result is succeeded
 
 - name: telegram
   uri:
-    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info2}}
+    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info2_{{item.Name}}}}
   when: result is succeeded
 
 - set_fact:
