@@ -14,11 +14,11 @@
   loop: "{{ result.json }}"
 
 - set_fact:
-    info2: "{{info | join('_|_') }}"
+    info2: "{{info | join(',') }}"
 
 - name: telegram
   uri:
-    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}}_{{info2}}
+    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info2}}
   when: result is succeeded
 #- set_fact:
 #    results: "{{ loginoutput.json }}"
