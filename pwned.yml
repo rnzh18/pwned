@@ -10,12 +10,16 @@
   register: result
 
 - set_fact:
-    item.mail: "{{ item.mail | default([]) + [item.Name] }}"
+    info: "{{ item.mail }}"
+  when: result is succeeded
+
+- set_fact:
+    item.mail: "{{ info | default([]) + [item.Name] }}"
   loop: "{{ result.json }}"
   when: result is succeeded
 
 - set_fact:
-    info2: "{{item.mail | join(',') }}"
+    info2: "{{info | join(',') }}"
   when: result is succeeded
 
 - name: telegram
