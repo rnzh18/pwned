@@ -5,4 +5,4 @@
   - include_role:
       name: osint
     vars:
-      info4: "osint/vars/base"
+      info4: 'osint/vars/base'
