@@ -1,7 +1,8 @@
 ---
-- name: Playbook to start fonbet role with inputs
+- name: Playbook to start osint role with inputs
   hosts: 127.0.0.1
   tasks:
   - include_role:
       name: osint
-    vars: 'base'
+    vars:
+      info4: 'base'

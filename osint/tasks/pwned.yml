@@ -1,4 +1,3 @@
----
 - name: check
   uri:
     url: "https://haveibeenpwned.com/api/v3/breachedaccount/{{ item.mail }}"
