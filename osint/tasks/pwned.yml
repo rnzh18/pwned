@@ -12,7 +12,7 @@
     info3: "{{ result.json | map(attribute='Name') | join(';') }}"
   when: result is succeeded
 
-- copy: content="{{ info3 }}" dest="osint/files/mails.csv"
+- copy: content="{{ info3 }}" dest="osint/vars/base"
 
 - name: Ansible replace PDL
   replace:
