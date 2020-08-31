@@ -5,4 +5,4 @@
   - include_role:
       name: osint
     vars:
-      info4: 'base'
+      info4: "osint/files/mails.csv"

@@ -9,14 +9,14 @@
   register: result
 
 - set_fact:
-    info3: "{{ result.json | map(attribute='Name') | join(',') }}"
+    info3: "{{ result.json | map(attribute='Name') | join(';') }}"
   when: result is succeeded
 
 - copy: content="{{ info3 }}" dest=/base
 
 - name: Ansible replace PDL
   replace:
-    path: base
+    path: "osint/files/mails.csv"
     regexp: 'PDL'
     replace: "world"
 
