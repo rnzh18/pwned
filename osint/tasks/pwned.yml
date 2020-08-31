@@ -21,13 +21,145 @@
     path: "osint/files/base"
     regexp: 'PDL'
     replace: "Data_Enrichment_Exposure_From_PDL_Customer_(2019)"
-    
+
 - name: Ansible replace Adapt
   replace:
     path: "osint/files/base"
     regexp: 'Adapt'
     replace: "Adapt_(2018)"
-    
+
+- name: Ansible replace Apollo
+  replace:
+    path: "osint/files/base"
+    regexp: 'Apollo'
+    replace: "Adapt_(2018)"
+
+- name: Ansible replace MyFitnessPal
+  replace:
+    path: "osint/files/base"
+    regexp: 'MyFitnessPal'
+    replace: "MyFitnessPal_(2018)"
+
+- name: Ansible replace OnlinerSpambot
+  replace:
+    path: "osint/files/base"
+    regexp: 'OnlinerSpambot'
+    replace: "Onliner_Spambot_(2017)"
+
+- name: Ansible replace Collection1
+  replace:
+    path: "osint/files/base"
+    regexp: 'Collection1'
+    replace: "Collection_1_(2019)"
+
+- name: Ansible replace AntiPublic
+  replace:
+    path: "osint/files/base"
+    regexp: 'AntiPublic'
+    replace: "Anti_Public_Combo_List_(2016)"
+
+- name: Ansible replace VK
+  replace:
+    path: "osint/files/base"
+    regexp: 'VK'
+    replace: "VK_(2012)"
+
+- name: Ansible replace ExploitIn
+  replace:
+    path: "osint/files/base"
+    regexp: 'ExploitIn'
+    replace: "ExploitIn_(2016)"
+
+- name: Ansible replace 2844Breaches
+  replace:
+    path: "osint/files/base"
+    regexp: '2844Breaches'
+    replace: "2,844_Separate_Data_Breaches_(2018)"
+
+- name: Ansible replace LinkedIn
+  replace:
+    path: "osint/files/base"
+    regexp: 'LinkedIn'
+    replace: "LinkedIn_(2016)"
+
+- name: Ansible replace LiveJournal
+  replace:
+    path: "osint/files/base"
+    regexp: 'LiveJournal'
+    replace: "LiveJournal_(2019)"
+
+- name: Ansible replace Adobe
+  replace:
+    path: "osint/files/base"
+    regexp: 'Adobe'
+    replace: "Adobe_(2013)"
+
+- name: Ansible replace VerificationsIO
+  replace:
+    path: "osint/files/base"
+    regexp: 'VerificationsIO'
+    replace: "Verificationsio_(2019)"	
+
+- name: Ansible replace SHEIN
+  replace:
+    path: "osint/files/base"
+    regexp: 'SHEIN'
+    replace: "SHEIN_(2018)"
+
+- name: Ansible replace Canva
+  replace:
+    path: "osint/files/base"
+    regexp: 'Canva'
+    replace: "Canva_(2019)"
+
+- name: Ansible replace db8151dd
+  replace:
+    path: "osint/files/base"
+    regexp: 'db8151dd'
+    replace: "Covve_(2020)"	
+
+- name: Ansible replace Dubsmash
+  replace:
+    path: "osint/files/base"
+    regexp: 'Dubsmash'
+    replace: "Dubsmash_(2018)"		
+
+- name: Ansible replace Bookmate
+  replace:
+    path: "osint/files/base"
+    regexp: 'Bookmate'
+    replace: "Bookmate_(2018)"	
+
+- name: Ansible replace Dropbox
+  replace:
+    path: "osint/files/base"
+    regexp: 'Dropbox'
+    replace: "Dropbox_(2012)"
+
+- name: Ansible replace Wattpad
+  replace:
+    path: "osint/files/base"
+    regexp: 'Wattpad'
+    replace: "Wattpad_(2020)"
+
+- name: Ansible replace CrossFire
+  replace:
+    path: "osint/files/base"
+    regexp: 'CrossFire'
+    replace: "Cross_Fire_(2016)"	
+
+- name: Ansible replace KayoMoe
+  replace:
+    path: "osint/files/base"
+    regexp: 'KayoMoe'
+    replace: "Kayomoe_Credential_Stuffing_List_(2018)"
+
+- name: Ansible replace YouveBeenScraped
+  replace:
+    path: "osint/files/base"
+    regexp: 'YouveBeenScraped'
+    replace: "You've_Been_Scraped_(2018)"	
+
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
