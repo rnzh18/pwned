@@ -20,7 +20,14 @@
   replace:
     path: "osint/files/base"
     regexp: 'PDL'
-    replace: "world"
+    replace: "Data Enrichment Exposure From PDL Customer (2019)"
+	
+- name: Ansible replace Adapt
+  replace:
+    path: "osint/files/base"
+    regexp: 'Adapt'
+    replace: "Adapt (2018)"
+	
 
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
