@@ -16,7 +16,7 @@
 
 - name: Ansible replace PDL
   replace:
-    path: "osint/files/mails.csv"
+    path: "osint/vars/base"
     regexp: 'PDL'
     replace: "world"
 
