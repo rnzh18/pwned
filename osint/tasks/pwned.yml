@@ -14,18 +14,17 @@
 
 - copy:
     content: "{{ info3 }}"
-    dest: "osint/vars/base.yml"
-
-- name: Include vars
-  include_vars:
-    file: "osint/vars/base.yml"
-    name: info4
+    dest: "osint/files/base"
 
 - name: Ansible replace PDL
   replace:
-    path: "osint/vars/base.yml"
+    path: "osint/files/base"
     regexp: 'PDL'
     replace: "world"
+
+- set_fact:
+    info4: "{{lookup('file', 'osint/files/base')}}"
+  when: result is succeeded
 
 - name: telegram
   uri:
