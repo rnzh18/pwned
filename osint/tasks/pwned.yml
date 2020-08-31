@@ -28,7 +28,6 @@
     regexp: 'Adapt'
     replace: "Adapt (2018)"
 	
-
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
