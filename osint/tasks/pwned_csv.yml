@@ -1,6 +1,6 @@
 - name: load
   read_csv:
-    path: "/files/mails.csv"
+    path: "osint/files/mails.csv"
     delimiter: ';'
   register: new_mails
 
