@@ -13,8 +13,8 @@
   when: result is succeeded
 
 - copy:
-  content: "{{ info3 }}"
-  dest: "osint/vars/base.yml"
+    content: "{{ info3 }}"
+    dest: "osint/vars/base.yml"
 
 - name: Include vars
   include_vars:
