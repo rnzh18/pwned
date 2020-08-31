@@ -1,8 +1,0 @@
----
-- name: playbook name
-  hosts: 127.0.0.1
-  tasks:
-    - name: get
-      uri:
-        url: https://api.telegram.org/bot1343317346:AAGaJ9bmp0IdyWXOQEpiJFtDbshWOmk577k/sendMessage?chat_id=-1001437610160&text={{item.mail}}
-\\
