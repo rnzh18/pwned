@@ -9,9 +9,9 @@
   ignore_errors: yes
   register: result
 
- - set_fact:
-        info3: "{{ result.json | map(attribute='Name') | join(',') }}"
-      when: result is succeeded
+- set_fact:
+    info3: "{{ result.json | map(attribute='Name') | join(',') }}"
+  when: result is succeeded
 
 - name: telegram
   uri:
