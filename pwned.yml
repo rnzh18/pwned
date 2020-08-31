@@ -15,7 +15,7 @@
   when: result is succeeded
 
 - set_fact:
-    info2: "{{info | join(',') }}"
+    info2: "{{item.mail | join(',') }}"
   when: result is succeeded
 
 - name: telegram
