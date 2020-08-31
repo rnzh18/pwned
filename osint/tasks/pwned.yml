@@ -12,11 +12,18 @@
     info3: "{{ result.json | map(attribute='Name') | join(';') }}"
   when: result is succeeded
 
-- copy: content="{{ info3 }}" dest="osint/vars/base"
+- copy:
+  content: "{{ info3 }}"
+  dest: "osint/vars/base.yml"
+
+- name: Include vars
+  include_vars:
+    file: "osint/vars/base.yml"
+    name: info4
 
 - name: Ansible replace PDL
   replace:
-    path: "osint/vars/base"
+    path: "osint/vars/base.yml"
     regexp: 'PDL'
     replace: "world"
 

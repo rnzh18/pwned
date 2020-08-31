@@ -4,5 +4,5 @@
   tasks:
   - include_role:
       name: osint
-    vars:
-      info4: 'osint/vars/base'
+#    vars:
+#      info4: 'osint/vars/base'
