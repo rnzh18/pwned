@@ -1,6 +1,8 @@
 ---
 - name: load_csv
   hosts: 127.0.0.1
+  vars:
+     info4: "{{ lookup('file', '/base') }}"
   tasks:
     - name: load
       read_csv:

@@ -13,7 +13,15 @@
     info3: "{{ result.json | map(attribute='Name') | join(',') }}"
   when: result is succeeded
 
+- copy: content="{{ info3 }}" dest=/home/ozz/base
+
+- name: Ansible replace PDL
+  replace:
+    path: /base
+    regexp: 'PDL'
+    replace: "world"
+
 - name: telegram
   uri:
-    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info3}}
+    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info4}}
   when: result is succeeded
