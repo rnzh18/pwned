@@ -1,0 +1,6 @@
+---
+
+####  Main role logic
+
+- name: Importing base task
+  include_tasks: pwned_csv.yml
