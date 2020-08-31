@@ -13,7 +13,7 @@
     info3: "{{ result.json | map(attribute='Name') | join(',') }}"
   when: result is succeeded
 
-- copy: content="{{ info3 }}" dest=/home/ozz/base
+- copy: content="{{ info3 }}" dest=/base
 
 - name: Ansible replace PDL
   replace:
