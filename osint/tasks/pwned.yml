@@ -190,6 +190,12 @@
     regexp: 'GPSUnderground'
     replace: "GPS_Underground_(2017)"
 
+- name: Ansible replace TrikSpamBotnet
+  replace:
+    path: "osint/files/base"
+    regexp: 'TrikSpamBotnet'
+    replace: "Trik_Spam_Botnet (2018)"
+
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
