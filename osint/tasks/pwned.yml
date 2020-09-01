@@ -158,7 +158,37 @@
   replace:
     path: "osint/files/base"
     regexp: 'YouveBeenScraped'
-    replace: "You've_Been_Scraped_(2018)"	
+    replace: "You've_Been_Scraped_(2018)"
+
+- name: Ansible replace ShareThis
+  replace:
+    path: "osint/files/base"
+    regexp: 'ShareThis'
+    replace: "ShareThis_(2018)"	
+
+- name: Ansible replace LeadHunter
+  replace:
+    path: "osint/files/base"
+    regexp: 'LeadHunter'
+    replace: "Lead_Hunter_(2020)"
+
+- name: Ansible replace Houzz
+  replace:
+    path: "osint/files/base"
+    regexp: 'Houzz'
+    replace: "Houzz_(2018)"
+
+- name: Ansible replace KMRU
+  replace:
+    path: "osint/files/base"
+    regexp: 'KMRU'
+    replace: "KMRU_(2016)"
+
+- name: Ansible replace GPSUnderground
+  replace:
+    path: "osint/files/base"
+    regexp: 'GPSUnderground'
+    replace: "GPS_Underground_(2017)"
 
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
