@@ -196,6 +196,12 @@
     regexp: 'TrikSpamBotnet'
     replace: "Trik_Spam_Botnet (2018)"
 
+- name: Ansible replace B2BUSABusinesses
+  replace:
+    path: "osint/files/base"
+    regexp: 'B2BUSABusinesses'
+    replace: "B2B_USA_Businesses_(2017)"
+
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
