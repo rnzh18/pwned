@@ -194,7 +194,7 @@
   replace:
     path: "osint/files/base"
     regexp: 'TrikSpamBotnet'
-    replace: "Trik_Spam_Botnet (2018)"
+    replace: "Trik_Spam_Botnet_(2018)"
 
 - name: Ansible replace B2BUSABusinesses
   replace:
