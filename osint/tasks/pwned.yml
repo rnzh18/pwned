@@ -226,6 +226,12 @@
     regexp: 'Promo'
     replace: "Promo_(2020)"
 
+- name: Ansible replace MyHeritage
+  replace:
+    path: "osint/files/base"
+    regexp: 'MyHeritage'
+    replace: "MyHeritage_(2017)"
+
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
