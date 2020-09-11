@@ -208,6 +208,24 @@
     regexp: 'Exactis'
     replace: "Exactis_(2018)"
 
+- name: Ansible replace NexusMods
+  replace:
+    path: "osint/files/base"
+    regexp: 'NexusMods'
+    replace: "Nexus_Mods_(2015)"
+
+- name: Ansible replace RiverCityMedia
+  replace:
+    path: "osint/files/base"
+    regexp: 'RiverCityMedia'
+    replace: "River_City_Media_Spam_List_(2017)"
+
+- name: Ansible replace Promo
+  replace:
+    path: "osint/files/base"
+    regexp: 'Promo'
+    replace: "Promo_(2020)"
+
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
