@@ -232,6 +232,12 @@
     regexp: 'MyHeritage'
     replace: "MyHeritage_(2017)"
 
+- name: Ansible replace QIP
+  replace:
+    path: "osint/files/base"
+    regexp: 'QIP'
+    replace: "QIP_(2011)"
+
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
