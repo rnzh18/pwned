@@ -238,6 +238,12 @@
     regexp: 'QIP'
     replace: "QIP_(2011)"
 
+- name: Ansible replace Universarium
+  replace:
+    path: "osint/files/base"
+    regexp: 'Universarium'
+    replace: "Universarium_(2019)"
+
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
