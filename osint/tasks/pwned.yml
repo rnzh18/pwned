@@ -244,6 +244,24 @@
     regexp: 'Universarium'
     replace: "Universarium_(2019)"
 
+- name: Ansible replace Lastfm
+  replace:
+    path: "osint/files/base"
+    regexp: 'Lastfm'
+    replace: "Lastfm_(2012)"
+
+- name: Ansible replace Evite
+  replace:
+    path: "osint/files/base"
+    regexp: 'Evite'
+    replace: "Evite_(2019)"
+
+- name: Ansible replace MailRu
+  replace:
+    path: "osint/files/base"
+    regexp: 'MailRu'
+    replace: "MailRu_Dump_(2014)"
+
 - set_fact:
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
