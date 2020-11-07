@@ -98,7 +98,7 @@
   replace:
     path: "osint/files/base"
     regexp: 'VerificationsIO'
-    replace: "Verificationsio_(2019)"	
+    replace: "Verificationsio_(2019)"
 
 - name: Ansible replace SHEIN
   replace:
@@ -116,19 +116,19 @@
   replace:
     path: "osint/files/base"
     regexp: 'db8151dd'
-    replace: "Covve_(2020)"	
+    replace: "Covve_(2020)"
 
 - name: Ansible replace Dubsmash
   replace:
     path: "osint/files/base"
     regexp: 'Dubsmash'
-    replace: "Dubsmash_(2018)"		
+    replace: "Dubsmash_(2018)"
 
 - name: Ansible replace Bookmate
   replace:
     path: "osint/files/base"
     regexp: 'Bookmate'
-    replace: "Bookmate_(2018)"	
+    replace: "Bookmate_(2018)"
 
 - name: Ansible replace Dropbox
   replace:
@@ -146,7 +146,7 @@
   replace:
     path: "osint/files/base"
     regexp: 'CrossFire'
-    replace: "Cross_Fire_(2016)"	
+    replace: "Cross_Fire_(2016)"
 
 - name: Ansible replace KayoMoe
   replace:
@@ -164,7 +164,7 @@
   replace:
     path: "osint/files/base"
     regexp: 'ShareThis'
-    replace: "ShareThis_(2018)"	
+    replace: "ShareThis_(2018)"
 
 - name: Ansible replace LeadHunter
   replace:
@@ -266,7 +266,11 @@
     info4: "{{lookup('file', 'osint/files/base')}}"
   when: result is succeeded
 
+#- name: telegram
+#  uri:
+#    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info4}}
+#  when: result is succeeded
 - name: telegram
   uri:
-    url: https://api.telegram.org/bot1343317346:{{telegram}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info4}}
+    url: https://api.telegram.org/bot1343317346:{{telegram2}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info4}}
   when: result is succeeded

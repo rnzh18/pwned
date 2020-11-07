@@ -4,14 +4,6 @@
     delimiter: ';'
   register: new_mails
 
-#    - debug:
-#        msg: "{{ item.key }}"
-#      with_dict: "{{ new_mails.dict }}"
-#      register: new_mail_for_test
-# dhuvisuvh
-#    - set_fact:
-#        mail_to_check: "{{ mail_to_check | default([]) + [item.mail] }}"
-#      loop: "{{ new_mails.list }}"
 - name: check
   include_tasks: pwned.yml
   loop: "{{ new_mails.list }}"
